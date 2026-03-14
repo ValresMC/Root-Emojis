@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "For Root-Emojis plugin",
+    "name": "Root-Emojis",
+    "uuid": "bfad3145-0e71-4d4b-a3a9-484584c8487d",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 2, 6]
+  },
+  "modules": [
+    {
+      "description": "For Root-Emojis plugin",
+      "version": [1, 0, 0],
+      "uuid": "1faa1a53-7bf2-4c38-8438-379cf603a6f7",
+      "type": "resources"
+    }
+  ]
+}
