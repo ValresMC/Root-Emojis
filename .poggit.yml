@@ -5,4 +5,5 @@ branches:
 projects:
   Root-Emojis:
     path: ""
+    icon: "icon.png"
 ...
