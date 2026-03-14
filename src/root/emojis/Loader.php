@@ -53,7 +53,6 @@ class Loader extends PluginBase {
 
         array_unshift($stack, $pack);
         $manager->setResourceStack($stack);
-        $manager->setResourcePacksRequired(true);
 
         $this->getLogger()->info("Pack loaded : {$pack->getPackName()} v{$pack->getPackVersion()}");
     }
