@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace root\emojis;
+namespace Valres\emojis;
 
 use pocketmine\event\EventPriority;
 use pocketmine\event\player\PlayerChatEvent;
@@ -10,7 +10,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\resourcepacks\ResourcePackException;
 use pocketmine\resourcepacks\ZippedResourcePack;
 use ReflectionException;
-use root\emojis\utils\ChatParser;
+use Valres\emojis\utils\ChatParser;
 
 class Loader extends PluginBase {
     /** @throws ReflectionException */
@@ -30,14 +30,14 @@ class Loader extends PluginBase {
 
         $packPath = $this->getDataFolder() . $resourceFile;
         if (!is_file($packPath)) {
-            $this->getLogger()->error("Pack unreachable: " . $packPath);
+            $this->getLogger()->debug("Pack unreachable: " . $packPath);
             return;
         }
 
         try {
             $pack = new ZippedResourcePack($packPath);
         } catch(ResourcePackException $e) {
-            $this->getLogger()->error("Impossible to load pack: " . $e->getMessage());
+            $this->getLogger()->debug("Impossible to load pack: " . $e->getMessage());
             return;
         }
 
@@ -46,7 +46,7 @@ class Loader extends PluginBase {
         $stack = $manager->getResourceStack();
         foreach ($stack as $loadedPack) {
             if ($loadedPack->getPackId() === $pack->getPackId()) {
-                $this->getLogger()->info("Pack with name {$pack->getPackName()} already load");
+                $this->getLogger()->debug("Pack with name {$pack->getPackName()} already load");
                 return;
             }
         }
@@ -54,6 +54,6 @@ class Loader extends PluginBase {
         array_unshift($stack, $pack);
         $manager->setResourceStack($stack);
 
-        $this->getLogger()->info("Pack loaded : {$pack->getPackName()} v{$pack->getPackVersion()}");
+        $this->getLogger()->debug("Pack loaded : {$pack->getPackName()} v{$pack->getPackVersion()}");
     }
 }

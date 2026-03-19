@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace root\emojis\utils;
+namespace Valres\emojis\utils;
 
 class EmojisMap {
     public const MAP = [

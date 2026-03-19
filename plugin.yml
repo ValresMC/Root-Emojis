@@ -2,4 +2,4 @@ name: Root-Emojis
 author: Root-Studios (Valres)
 version: 1.0.0
 api: [5.0.0]
-main: root\emojis\Loader
+main: Valres\emojis\Loader
