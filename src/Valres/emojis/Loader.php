@@ -20,7 +20,7 @@ class Loader extends PluginBase {
         $this->getServer()->getPluginManager()->registerEvent(PlayerChatEvent::class, function(PlayerChatEvent $ev): void {
             $message = $ev->getMessage();
             $ev->setMessage(ChatParser::parse($message));
-        }, EventPriority::MONITOR, $this, true);
+        }, EventPriority::NORMAL, $this, true);
     }
 
     private function loadPack(): void {
